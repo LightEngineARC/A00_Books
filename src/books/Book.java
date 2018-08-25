@@ -30,7 +30,7 @@ import java.util.Scanner;
  * @param <T>
  *
  */
-public class Book<T> implements Comparable<T>
+public class Book implements Comparable<Book>
 {
 	/**
 	 * Fields
@@ -68,7 +68,7 @@ public class Book<T> implements Comparable<T>
 				count++;
 				String[] parsedText = new String[3];
 				parsedText = text.split(",");
-				booksList.add(new Book<Object>(parsedText[0], parsedText[1], Integer.parseInt(parsedText[2])));
+				booksList.add(new Book(parsedText[0], parsedText[1], Integer.parseInt(parsedText[2])));
 				booksList.sort(null);
 
 			} else
@@ -78,23 +78,10 @@ public class Book<T> implements Comparable<T>
 
 		}
 
-		// TODO read file and return list.
-		// TODO output errors to error stream
 		sc.close();
 		System.out.println("Number of books read in: " + count);
 		return booksList;
 
-	}
-
-	/**
-	 * @param <T>
-	 * 
-	 */
-	@Override
-	public int compareTo(T arg0)
-	{
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	/**
@@ -128,6 +115,13 @@ public class Book<T> implements Comparable<T>
 	public int getYear()
 	{
 		return year;
+	}
+
+	@Override
+	public int compareTo(Book o)
+	{
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
