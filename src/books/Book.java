@@ -7,7 +7,7 @@
  *
  *  Description : Assignment Books
  *
- *    1) review implementing interface Comparable<T>
+ *    1) review implementing interface Comparable
  *
  *    2) A List is used to store and compare books.
  *
