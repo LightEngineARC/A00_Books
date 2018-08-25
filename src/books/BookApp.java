@@ -1,13 +1,13 @@
 /********************************************************
  *
- *  Project :  <Name of project|assignment>
- *  File    :  <Name of source code file>
+ *  Project :  A00 Books
+ *  File    :  books
  *  Name    :  Ashton Chatelain
- *  Date    :  <Date created (project due date)>
+ *  Date    :  8/25/2018
  *
- *  Description : (Narrative description, not code)
+ *  Description : Assignment Books
  *
- *    1) What is the purpose of the code; what problem does the code solve.
+ *    1) Test class for Book.java
  *
  *    2) What data-structures are used.
  *
@@ -46,6 +46,7 @@ public class BookApp
 	 ****************************************************/
 	public static void main(String[] args) throws IOException
 	{
+		// create list of books by sending it the file books.csv
 		List<Book> bookList = Book.getList("books.csv");
 
 		System.out.println("\n\nSorted Book List:\n");

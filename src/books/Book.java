@@ -1,7 +1,7 @@
 /********************************************************
  *
  *  Project :  A00 Books
- *  File    :  A00_Books
+ *  File    :  books
  *  Name    :  Ashton Chatelain
  *  Date    :  8/25/2018
  *
@@ -62,9 +62,12 @@ public class Book implements Comparable<Book>
 			{
 				count++;
 				String[] arrayOfSplitText = new String[3];
-				arrayOfSplitText = text.split(","); // create array of the values by commas
+				// create array of the values by commas
+				arrayOfSplitText = text.split(",");
+				// add books to the list by sending the array indexes to the constructor
 				booksList
 						.add(new Book(arrayOfSplitText[0], arrayOfSplitText[1], Integer.parseInt(arrayOfSplitText[2])));
+				// sort the book list
 				booksList.sort(null);
 
 			} else
