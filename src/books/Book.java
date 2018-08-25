@@ -60,7 +60,7 @@ public class Book implements Comparable<T>
 	public String toString()
 	{
 		// TODO override to string
-		return title + " by " + author + "(" + year + ")";
+		return title + " by " + author + " (" + year + ")";
 	}
 
 	/**
