@@ -1,21 +1,18 @@
 /********************************************************
  *
- *  Project :  <Name of project|assignment>
- *  File    :  <Name of source code file>
+ *  Project :  A00 Books
+ *  File    :  A00_Books
  *  Name    :  Ashton Chatelain
- *  Date    :  <Date created (project due date)>
+ *  Date    :  8/25/2018
  *
- *  Description : (Narrative description, not code)
+ *  Description : Assignment Books
  *
- *    1) What is the purpose of the code; what problem does the code solve.
+ *    1) review implementing interface Comparable<T>
  *
- *    2) What data-structures are used.
+ *    2) A List is used to store and compare books.
  *
- *    3) What algorithms, techniques, etc. are used in implementing the data structures.
+ *    3) Methods used: compareTo, toString, sort(), 
  *
- *    4) What methods are implemented (optional).
- *
- *  Changes :  <Description|date of modifications>
  *
  ********************************************************/
 package books;
@@ -50,29 +47,29 @@ public class Book implements Comparable<Book>
 
 	/**
 	 * @throws IOException
-	 * 
 	 */
 	public static List<Book> getList(String file) throws IOException
 	{
 		ArrayList<Book> booksList = new ArrayList<Book>();
 		int count = 0;
-		// pattern of line must match regex
+		// pattern of line must match regex to be a valid book
 		String lineRegex = "[^,]*+[,]{1}[^,]+[,]{1}[0-9]{4}";
-		// File bookFile = new File(ClassLoader.getSystemResourceAsStream(file));
 		Scanner sc = new Scanner(ClassLoader.getSystemResourceAsStream("books/" + file));
 		while (sc.hasNext())
 		{
-			String text = sc.nextLine();
+			String text = sc.nextLine(); // capture a line of text to check
 			if (text.matches(lineRegex))
 			{
 				count++;
-				String[] parsedText = new String[3];
-				parsedText = text.split(",");
-				booksList.add(new Book(parsedText[0], parsedText[1], Integer.parseInt(parsedText[2])));
+				String[] arrayOfSplitText = new String[3];
+				arrayOfSplitText = text.split(","); // create array of the values by commas
+				booksList
+						.add(new Book(arrayOfSplitText[0], arrayOfSplitText[1], Integer.parseInt(arrayOfSplitText[2])));
 				booksList.sort(null);
 
 			} else
 			{
+				// when text patter does not match the requirements
 				System.out.println("Problem reading in \"" + text + "\"");
 			}
 
@@ -85,12 +82,12 @@ public class Book implements Comparable<Book>
 	}
 
 	/**
-	 * 
+	 * Override toString method to title by author (year)
 	 */
 	@Override
 	public String toString()
 	{
-		return title + " by " + author + " (" + year + ")";
+		return title + " by " + author + " ( " + year + " )";
 	}
 
 	/**
@@ -117,6 +114,9 @@ public class Book implements Comparable<Book>
 		return year;
 	}
 
+	/**
+	 * Override compareTo method
+	 */
 	@Override
 	public int compareTo(Book o)
 	{

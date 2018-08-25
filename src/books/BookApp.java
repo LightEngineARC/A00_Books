@@ -5,7 +5,7 @@
  *  Name    :  Ashton Chatelain
  *  Date    :  <Date created (project due date)>
  *
- *  Description : (Narrative desciption, not code)
+ *  Description : (Narrative description, not code)
  *
  *    1) What is the purpose of the code; what problem does the code solve.
  *
@@ -21,6 +21,7 @@
 package books;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -46,6 +47,16 @@ public class BookApp
 	public static void main(String[] args) throws IOException
 	{
 		List<Book> bookList = Book.getList("books.csv");
+
+		System.out.println("\n\nSorted Book List:\n");
+		for (int i = 0; i < bookList.size(); i++)
+		{
+			System.out.println(bookList.get(i));
+		}
+
+		bookList.sort(Collections.reverseOrder());
+
+		System.out.println("\n\nReverse Order:\n");
 		for (int i = 0; i < bookList.size(); i++)
 		{
 			System.out.println(bookList.get(i));
