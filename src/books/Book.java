@@ -35,9 +35,11 @@ public class Book implements Comparable<T>
 	/**
 	 * 
 	 */
-	public Book()
+	public Book(String title, String author, int year)
 	{
-		// TODO Auto-generated constructor stub
+		this.title = title;
+		this.author = author;
+		this.year = year;
 	}
 
 	/**
