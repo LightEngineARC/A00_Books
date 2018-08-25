@@ -45,7 +45,6 @@ public class BookApp
 	 ****************************************************/
 	public static void main(String[] args) throws IOException
 	{
-		// TODO Auto-generated method stub
 		List<Book> bookList = Book.getList("books.csv");
 		for (int i = 0; i < bookList.size(); i++)
 		{
