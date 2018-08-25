@@ -5,7 +5,7 @@
  *  Name    :  Ashton Chatelain
  *  Date    :  <Date created (project due date)>
  *
- *  Description : (Narrative desciption, not code)
+ *  Description : (Narrative description, not code)
  *
  *    1) What is the purpose of the code; what problem does the code solve.
  *
@@ -21,7 +21,7 @@
 package books;
 
 /**
- * @author iamsp
+ * @author Ashton
  *
  */
 public class Book implements Comparable<T>
