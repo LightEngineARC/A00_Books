@@ -20,6 +20,9 @@
  ********************************************************/
 package books;
 
+import java.io.IOException;
+import java.util.List;
+
 /**
  * @author iamsp
  *
@@ -28,20 +31,26 @@ public class BookApp
 {
 
 	/****************************************************
-	 * Method     : NAME
+	 * Method : NAME
 	 *
-	 * Purpose    : DESCRIPTION
+	 * Purpose : DESCRIPTION
 	 *
-	 * Parameters : type              - description
-	 *              number_of_elements - the number of elements
-	 *                                   in the type
+	 * Parameters : type - description number_of_elements - the number of elements
+	 * in the type
 	 *
-	 * Returns    : What does it return
+	 * Returns : What does it return
+	 * 
+	 * @throws IOException
 	 *
 	 ****************************************************/
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
 		// TODO Auto-generated method stub
+		List<Book> bookList = Book.getList("books.csv");
+		for (int i = 0; i < bookList.size(); i++)
+		{
+			System.out.println(bookList.get(i));
+		}
 
 	}
 
