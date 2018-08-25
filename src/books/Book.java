@@ -67,8 +67,6 @@ public class Book implements Comparable<Book>
 				// add books to the list by sending the array indexes to the constructor
 				booksList
 						.add(new Book(arrayOfSplitText[0], arrayOfSplitText[1], Integer.parseInt(arrayOfSplitText[2])));
-				// sort the book list
-				booksList.sort(null);
 
 			} else
 			{

@@ -49,6 +49,8 @@ public class BookApp
 		// create list of books by sending it the file books.csv
 		List<Book> bookList = Book.getList("books.csv");
 
+		bookList.sort(null);
+
 		System.out.println("\n\nSorted Book List:\n");
 		for (int i = 0; i < bookList.size(); i++)
 		{
