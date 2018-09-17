@@ -19,6 +19,7 @@ package books;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -34,6 +35,8 @@ public class Book implements Comparable<Book>
 	 */
 	String title, author;
 	int year;
+	public static final Comparator BY_TITLE = new TitleComparator();
+	public static final Comparator BY_AUTHOR = new AuthorComparator();
 
 	/**
 	 * Parameterized Constructor
@@ -122,6 +125,29 @@ public class Book implements Comparable<Book>
 	public int compareTo(Book o)
 	{
 		return this.getTitle().compareTo(o.getTitle());
+	}
+
+	private static class AuthorComparator implements Comparator<Book>
+	{
+		@Override
+		public int compare(Book b1, Book b2)
+		{
+
+			return b1.getAuthor().compareTo(b2.getAuthor());
+		}
+
+	}
+
+	private static class TitleComparator implements Comparator<Book>
+	{
+
+		@Override
+		public int compare(Book b1, Book b2)
+		{
+
+			return b1.getTitle().compareTo(b2.getTitle());
+		}
+
 	}
 
 }

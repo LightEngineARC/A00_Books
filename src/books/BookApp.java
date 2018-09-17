@@ -51,15 +51,22 @@ public class BookApp
 
 		bookList.sort(null);
 
-		System.out.println("\n\nSorted Book List:\n");
+		// System.out.println("\n\nSorted Book List:\n");
+		// for (int i = 0; i < bookList.size(); i++)
+		// {
+		// System.out.println(bookList.get(i));
+		// }
+
+		Collections.sort(bookList, Book.BY_AUTHOR);
+
+		System.out.println("\n\nsorting by author:\n");
 		for (int i = 0; i < bookList.size(); i++)
 		{
 			System.out.println(bookList.get(i));
 		}
+		Collections.sort(bookList, Book.BY_TITLE);
 
-		bookList.sort(Collections.reverseOrder());
-
-		System.out.println("\n\nReverse Order:\n");
+		System.out.println("\n\nsorting by Title:\n");
 		for (int i = 0; i < bookList.size(); i++)
 		{
 			System.out.println(bookList.get(i));
